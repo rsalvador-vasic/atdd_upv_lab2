@@ -67,9 +67,9 @@ initial begin
 	c4_interrupt_a = 1'b0;
         forever begin
           repeat (3) @ (posedge c4_clk);
-          c4_interrupt_a = 1'b1;
+          c4_interrupt_a = #1 1'b1;
           repeat (1) @ (posedge c4_clk);
-          c4_interrupt_a = 1'b0;
+          c4_interrupt_a = #1 1'b0;
         end
 end
 
@@ -77,9 +77,9 @@ initial begin
 	c4_interrupt_b = 1'b0;
         forever begin
           repeat (6) @ (posedge c4_clk);
-          c4_interrupt_b = 1'b1;
+          c4_interrupt_b = #1 1'b1;
           repeat (1) @ (posedge c4_clk);
-          c4_interrupt_b = 1'b0;
+          c4_interrupt_b = #1 1'b0;
         end
 end
 
@@ -89,9 +89,9 @@ initial begin
 	c4_select_interrupt = 1'b0;
         forever begin
           repeat (22) @ (posedge c4_clk);
-          c4_select_interrupt = 1'b1;
+          c4_select_interrupt = #1 1'b1;
           repeat (63) @ (posedge c4_clk);
-          c4_select_interrupt = 1'b0;
+          c4_select_interrupt = #1 1'b0;
         end
 end
 
